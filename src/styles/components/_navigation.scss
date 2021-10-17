@@ -1,0 +1,21 @@
+.navigation-wrapper {
+  width: 80%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 40px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+  }
+
+  .active {
+    background-color: #2c3034;
+    padding: 10px 40px;
+    border: 1px solid #343a40;
+  }
+}

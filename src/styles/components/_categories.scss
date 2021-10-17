@@ -1,0 +1,30 @@
+.categories-wrapper {
+  margin-top: 50px;
+
+  h1 {
+    text-align: center;
+  }
+
+  .list-group {
+    width: 60%;
+    max-width: 1000px;
+    margin: 20px auto;
+    position: relative;
+
+    .list-group-item {
+      text-align: center;
+      background-color: #212529;
+      color: white;
+      box-sizing: border-box;
+      border: 1px solid #343a40;
+    }
+
+    .list-group-item:nth-child(2n) {
+      background-color: #2c3034;
+    }
+
+    .list-group-item:hover {
+      background-color: #323539;
+    }
+  }
+}

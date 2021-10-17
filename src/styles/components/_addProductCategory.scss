@@ -1,0 +1,54 @@
+.adding-wrapper {
+  margin-top: 50px;
+
+  h1 {
+    text-align: center;
+  }
+
+  .buttons-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      margin: 5px;
+      padding: 10px;
+      width: 200px;
+    }
+  }
+
+  form {
+    p {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 25px;
+    }
+
+    input {
+      width: 46%;
+      margin: 0 auto;
+      padding: 10px;
+      display: block;
+      border-radius: 5px;
+    }
+
+    select {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 20px;
+      width: 160px;
+      border-radius: 5px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px;
+      width: 140px;
+    }
+
+    .category-input {
+      width: 40%;
+    }
+  }
+}

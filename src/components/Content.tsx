@@ -4,6 +4,7 @@ import AddProductCategory from "./AddProductCategory";
 import Categories from "./Categories";
 import EditCategory from "./EditCategory";
 import EditProduct from "./EditProduct";
+import Home from "./Home";
 import Products from "./Products";
 
 
@@ -11,6 +12,7 @@ const Content = () => {
   return (
     <section>
       <Switch>
+        <Route path="/" exact component={Home} />
         <Route path="/products" component={Products} />
         <Route path="/categories" component={Categories} />
         <Route path="/edit-product" component={EditProduct} />

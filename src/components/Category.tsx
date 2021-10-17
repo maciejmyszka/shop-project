@@ -1,9 +1,10 @@
 import React from "react";
 import { ListGroup } from "react-bootstrap";
 
-const Category = ({category} : any) => {
+
+const Category = ({name}:{name: string}) => {
   return (
-    <ListGroup.Item>{category.name}</ListGroup.Item>
+    <ListGroup.Item>{name}</ListGroup.Item>
   )
 }
 

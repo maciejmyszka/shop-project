@@ -1,17 +1,21 @@
-import React from "react";
-import {Toast} from "react-bootstrap";
+import React, { Dispatch} from "react";
+import { Toast } from "react-bootstrap";
 
-const Notification = ({setStatus}: any) => {
+interface Props {
+  setStatus: Dispatch<number>;
+  status: number;
+}
+
+const Notification = ({setStatus, status}: Props) => {
 
   return (
-    <Toast onClose={() => setStatus(0)}>
-        <Toast.Header>
-          <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
-          <strong className="me-auto">SUKCES</strong>
-          <small>Przed chwilą</small>
-        </Toast.Header>
-        <Toast.Body>Operacja wykonana pomyślnie.</Toast.Body>
-      </Toast>
+    <Toast onClose={() => setStatus(0)} style={{display: status === 0 ? "none" : "block"}}>
+      <Toast.Header>
+        <strong className="me-auto">SUKCES</strong>
+        <small>Przed chwilą</small>
+      </Toast.Header>
+      <Toast.Body>Operacja wykonana pomyślnie.</Toast.Body>
+    </Toast>
   )
 }
 

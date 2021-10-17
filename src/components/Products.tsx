@@ -17,9 +17,10 @@ const Products = () => {
   const [products, setProducts] = useState<ProductsList>([])
 
   useEffect(() => {
-    api.get(`/ajax/219/products`).then((response :AxiosResponse<any>) => {
-      setProducts(response.data.data)
-    })
+    api.get(`/ajax/219/products`)
+      .then((response :AxiosResponse<any>) => {
+        setProducts(response.data.data)
+      })
   }, [])
 
   return (
@@ -34,7 +35,7 @@ const Products = () => {
           </tr>
         </thead>
         <tbody>
-          {products.map((product:SingleProduct, index:number) => <Product key={product.id} product={product} index={index} />)}
+          {products.map((product: SingleProduct, index: number) => <Product key={product.id} product={product} index={index} />)}
         </tbody>
       </Table>
     </div>

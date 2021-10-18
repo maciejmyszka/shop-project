@@ -30,7 +30,10 @@ const Product = ({product, index}: Props) => {
       })
   }, [])
 
-  const categoryName = categories.map((category: SingleCategory) => category.id === product.category_id ? <th key={product.id}>{category.name}</th> : null)
+  const categoryName = categories.map((category: SingleCategory) => category.id === product.category_id 
+    ? <th key={product.id}>{category.name}</th> 
+    : null
+  )
 
   return (
     <tr>

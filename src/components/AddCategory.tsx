@@ -31,7 +31,9 @@ const AddCategory = ({setStatus, setActionType}: Props) => {
         placeholder="Nowa kategoria" 
         className="category-input" 
       />
-      <Button variant="success" onClick={(e: MouseEvent<HTMLElement>) => onClickAddCategory(e as any)}>Dodaj</Button>
+      <Button variant="success" onClick={(e: MouseEvent<HTMLElement>) => onClickAddCategory(e as any)}>
+        Dodaj
+      </Button>
     </form>
   )
 }

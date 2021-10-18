@@ -35,7 +35,13 @@ const Products = () => {
           </tr>
         </thead>
         <tbody>
-          {products.map((product: SingleProduct, index: number) => <Product key={product.id} product={product} index={index} />)}
+          {products.map((product: SingleProduct, index: number) => (
+            <Product 
+              key={product.id} 
+              product={product} 
+              index={index} 
+            />
+          ))}
         </tbody>
       </Table>
     </div>

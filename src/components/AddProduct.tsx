@@ -49,7 +49,9 @@ const AddProduct = ({categories, setStatus, setActionType}: Props) => {
             <option key={category.id} value={category.id}>{category.name}</option>
           ))}
       </select>
-      <Button variant="primary" onClick={(e: MouseEvent<HTMLElement>) => onClickAddProduct(e as any)}>Dodaj</Button>
+      <Button variant="primary" onClick={(e: MouseEvent<HTMLElement>) => onClickAddProduct(e as any)}>
+        Dodaj
+      </Button>
     </form>
   )
 }

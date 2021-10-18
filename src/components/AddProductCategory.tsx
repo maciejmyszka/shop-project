@@ -30,12 +30,25 @@ const AddProductCategory = () => {
     <div className="adding-wrapper">
       <h1>Co chcesz zrobić?</h1>
       <div className="buttons-wrapper">
-        <Button variant="primary" onClick={() => setActionType("product")}>Dodać nowy produkt</Button>
-        <Button variant="success" onClick={() => setActionType("category")}>Dodać nową kategorię</Button>
+        <Button variant="primary" onClick={() => setActionType("product")}>
+          Dodać nowy produkt
+        </Button>
+        <Button variant="success" onClick={() => setActionType("category")}>
+          Dodać nową kategorię
+        </Button>
       </div>
-      {actionType === "product" && <AddProduct categories={categories} setStatus={setStatus} setActionType={setActionType} /> }
+      {actionType === "product" && (
+        <AddProduct 
+          categories={categories} 
+          setStatus={setStatus} 
+          setActionType={setActionType} 
+        /> 
+      )}
       {actionType === "category" && <AddCategory setStatus={setStatus} setActionType={setActionType} />}
-      {status === (200 || 201 || 202 || 203 || 204) ? <Notification setStatus={setStatus} status={status} /> : <ErrorMessage setStatus={setStatus} status={status}/>}
+      {status === (200 || 201 || 202 || 203 || 204) 
+        ? <Notification setStatus={setStatus} status={status} /> 
+        : <ErrorMessage setStatus={setStatus} status={status}/>
+      }
     </div>
   )
 }

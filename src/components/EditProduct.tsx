@@ -46,7 +46,10 @@ const EditProduct = () => {
           setChoosedProduct={setChoosedProduct}
         />
         )}
-      {status === (200 || 201 || 202 || 203 || 204) ? <Notification setStatus={setStatus} status={status} /> : <ErrorMessage setStatus={setStatus} status={status} />}
+      {status === (200 || 201 || 202 || 203 || 204) 
+        ? <Notification setStatus={setStatus} status={status} /> 
+        : <ErrorMessage setStatus={setStatus} status={status} />
+      }
     </div>
   )
 }

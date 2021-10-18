@@ -72,14 +72,18 @@ const ProductForm = ({products, choosedProduct, setStatus, setChoosedProduct}: P
       </Form.Group>
       <p>Wybierz kategorię do której chcesz przypisać produkt</p>
       <select value={choosedCategoryId} onChange={e => setChoosedCategoryId(e.target.value)}>
-      <option disabled hidden selected value="categories">Kategorie</option>
+        <option disabled hidden selected value="categories">Kategorie</option>
         {categories.map((category: SingleCategory) => (
           <option key={category.id} value={category.id}>{category.name}</option>
         ))}
       </select>
       <div className="buttons-wrapper">
-        <Button disabled variant="success"  onClick={(e: MouseEvent<HTMLElement>) => editProduct(e as any)}>Potwierdź</Button>
-        <Button variant="danger" onClick={(e: MouseEvent<HTMLElement>) => deleteProduct(e as any)}>Usuń</Button>
+        <Button variant="success"  onClick={(e: MouseEvent<HTMLElement>) => editProduct(e as any)}>
+          Potwierdź
+        </Button>
+        <Button variant="danger" onClick={(e: MouseEvent<HTMLElement>) => deleteProduct(e as any)}>
+          Usuń
+        </Button>
       </div>
     </Form>
   )

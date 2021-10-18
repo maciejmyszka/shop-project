@@ -28,12 +28,16 @@ const EditCategory = () => {
     <div className="edit-category-wrapper">
       <h1>Edycja kategorii</h1>
       <p>Wybierz kategorię, którą chcesz edytować</p>
-      <select placeholder="Wybierz kategorię" value={choosedCategory} onChange={e => setChoosedCategory(e.target.value)}>
+      <select 
+        placeholder="Wybierz kategorię" 
+        value={choosedCategory} 
+        onChange={e => setChoosedCategory(e.target.value)}
+      >
         <option disabled hidden selected value="Kategorie">Kategorie</option>
         {categories.map((category: SingleCategory) => (
-        <option key={category.id} value={category.name}>
-          {category.name}
-        </option>))}
+          <option key={category.id} value={category.name}>
+            {category.name}
+          </option>))}
       </select>
       {choosedCategory && (
         <CategoryForm 
@@ -43,7 +47,10 @@ const EditCategory = () => {
           setStatus={setStatus} 
         />
       )}
-      {status === (200 || 201 || 202 || 203 || 204) ? <Notification setStatus={setStatus} status={status} /> : <ErrorMessage setStatus={setStatus} status={status} />}
+      {status === (200 || 201 || 202 || 203 || 204) 
+        ? <Notification setStatus={setStatus} status={status} /> 
+        : <ErrorMessage setStatus={setStatus} status={status} />
+      }
     </div>
   )
 }

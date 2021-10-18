@@ -45,11 +45,20 @@ const CategoryForm = ({choosedCategory, categories, setChoosedCategory, setStatu
     <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Wpisz nazwę nowej kategorii</Form.Label>
-        <Form.Control type="text" placeholder="Nowa kategoria" value={newValue} onChange={e => setNewValue(e.target.value)}/>
+        <Form.Control 
+          type="text" 
+          placeholder="Nowa kategoria" 
+          value={newValue} 
+          onChange={e => setNewValue(e.target.value)}
+        />
       </Form.Group>
       <div className="buttons-wrapper">
-        <Button variant="success"  onClick={(e: MouseEvent<HTMLElement>) => editCategory(e as any)}>Potwierdź</Button>
-        <Button variant="danger" onClick={(e: MouseEvent<HTMLElement>) => deleteCategory(e as any)}>Usuń</Button>
+        <Button variant="success"  onClick={(e: MouseEvent<HTMLElement>) => editCategory(e as any)}>
+          Potwierdź
+        </Button>
+        <Button variant="danger" onClick={(e: MouseEvent<HTMLElement>) => deleteCategory(e as any)}>
+          Usuń
+        </Button>
       </div>
     </Form>
   )

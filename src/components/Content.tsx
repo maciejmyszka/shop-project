@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom"
+import { Switch, Route } from "react-router-dom";
 import AddProductCategory from "./AddProductCategory";
 import Categories from "./Categories";
 import EditCategory from "./EditCategory";
@@ -7,7 +7,6 @@ import EditProduct from "./EditProduct";
 import Home from "./Home";
 import Products from "./Products";
 import ErrorPage from "./ErrorPage";
-
 
 const Content = () => {
   return (
@@ -22,7 +21,7 @@ const Content = () => {
         <Route path="/" component={ErrorPage} />
       </Switch>
     </section>
-  )
-}
+  );
+};
 
 export default Content;

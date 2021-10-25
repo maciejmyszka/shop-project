@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import Product from './Product';
-import {api} from "../api/api";
-import {AxiosResponse} from "axios";
+import React, { useEffect, useState } from "react";
+import Product from "./Product";
+import { api } from "../api/api";
+import { AxiosResponse } from "axios";
 import { Table } from "react-bootstrap";
-
 
 interface SingleProduct {
   id: number;
@@ -11,17 +10,16 @@ interface SingleProduct {
   category_id: number;
 }
 
-interface ProductsList extends Array<SingleProduct>{}
+interface ProductsList extends Array<SingleProduct> {}
 
 const Products = () => {
-  const [products, setProducts] = useState<ProductsList>([])
+  const [products, setProducts] = useState<ProductsList>([]);
 
   useEffect(() => {
-    api.get(`/ajax/219/products`)
-      .then((response :AxiosResponse<any>) => {
-        setProducts(response.data.data)
-      })
-  }, [])
+    api.get(`/ajax/219/products`).then((response: AxiosResponse<any>) => {
+      setProducts(response.data.data);
+    });
+  }, []);
 
   return (
     <div className="products-wrapper">
@@ -36,16 +34,12 @@ const Products = () => {
         </thead>
         <tbody>
           {products.map((product: SingleProduct, index: number) => (
-            <Product 
-              key={product.id} 
-              product={product} 
-              index={index} 
-            />
+            <Product key={product.id} product={product} index={index} />
           ))}
         </tbody>
       </Table>
     </div>
-  )
-}
+  );
+};
 
 export default Products;

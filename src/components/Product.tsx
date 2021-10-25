@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { api } from "../api/api";
-import { AxiosResponse } from 'axios';
+import { AxiosResponse } from "axios";
 
 interface SingleCategory {
   id: number;
@@ -18,22 +18,24 @@ interface Props {
   index: number;
 }
 
-interface AllCategories extends Array<SingleCategory>{}
+interface AllCategories extends Array<SingleCategory> {}
 
-const Product = ({product, index}: Props) => {
-  const [categories, setCategories] = useState<AllCategories>([])
+const Product = ({ product, index }: Props) => {
+  const [categories, setCategories] = useState<AllCategories>([]);
 
   useEffect(() => {
-    api.get(`/ajax/219/product_categories`)
-      .then((response :AxiosResponse<any>) => {
-        setCategories(response.data.data)
-      })
-  }, [])
+    api
+      .get(`/ajax/219/product_categories`)
+      .then((response: AxiosResponse<any>) => {
+        setCategories(response.data.data);
+      });
+  }, []);
 
-  const categoryName = categories.map((category: SingleCategory) => category.id === product.category_id 
-    ? <th key={product.id}>{category.name}</th> 
-    : null
-  )
+  const categoryName = categories.map((category: SingleCategory) =>
+    category.id === product.category_id ? (
+      <th key={product.id}>{category.name}</th>
+    ) : null
+  );
 
   return (
     <tr>
@@ -41,7 +43,7 @@ const Product = ({product, index}: Props) => {
       <th>{product.name}</th>
       {categoryName}
     </tr>
-  )
-}
+  );
+};
 
 export default Product;

@@ -8,9 +8,11 @@ const Navigation = () => {
       <NavLink to="/categories">Lista kategorii</NavLink>
       <NavLink to="/edit-product">Edycja produktu</NavLink>
       <NavLink to="/edit-category">Edycja kategorii</NavLink>
-      <NavLink to="/add-product-category">Tworzenie nowej kategorii i produktu</NavLink>
+      <NavLink to="/add-product-category">
+        Tworzenie nowej kategorii i produktu
+      </NavLink>
     </div>
-  )
-}
+  );
+};
 
 export default Navigation;
